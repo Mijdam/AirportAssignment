@@ -1,7 +1,7 @@
-document.getElementById("demo").innerHTML = "Hello, World!";
+document.getElementById("demo").innerHTML = "Airplanes";
 
 $(document).ready(function() {
-    $("#demo").html("Hello, World!");
+    $("#demo").html("Airplanes");
 });
 
 $(document).ready(function() {
@@ -13,3 +13,26 @@ $(document).ready(function() {
 $(document).ready(function() {
         $("#div1").load("http://localhost:8080/api/airplane/");
 });
+
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#data-table thead th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+
+var table = $("#data-table").DataTable({
+    "iDisplayLength": -1,
+    ajax: {
+                url: "http://localhost:8080/api/airplane/",
+                dataSrc: ''
+    },
+    columns: [
+                { data: 'id' },
+                { data: 'fuel' },
+                { data: 'location' }
+    ]
+});
+
+
+} );

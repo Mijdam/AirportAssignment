@@ -17,6 +17,32 @@
                         <th>Location</th>
                     </tr>
                 </thead>
+        </table>
+
+        <div id="feedback"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#airplane-modal">Create airplane</button></div>
+            <div id="airplane-modal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <a class="close" data-dismiss="modal">×</a>
+                            <h3>Airplane creation</h3>
+                        </div>
+                        <div class="modal-body">
+                            <form class="feedback" name="feedback">
+                                <strong>Fuel</strong>
+                                <br />
+                                <input type="text" name="fuel" class="input-xlarge" value="">
+                                    <br /><br /><strong>Location</strong><br />
+                                <input type="text" name="location" class="input-xlarge" value="">
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-success" id="submit">Send</button>
+                            <a href="#" class="btn" data-dismiss="modal">Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

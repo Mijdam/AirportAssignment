@@ -34,5 +34,17 @@ var table = $("#data-table").DataTable({
     ]
 });
 
+// Apply the search
+table.columns().every( function () {
+    var that = this;
 
+    $( 'input', this.header() ).on( 'keyup change', function () {
+        if ( that.search() !== this.value ) {
+            that
+                .search( this.value )
+                .draw();
+        }
+    } );
 } );
+
+});

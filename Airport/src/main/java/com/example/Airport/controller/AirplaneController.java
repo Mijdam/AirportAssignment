@@ -14,27 +14,25 @@ public class AirplaneController {
     @Autowired
     private AirplaneRepository airplaneRepository;
 
+    //Get all airplanes.
     @RequestMapping(value="api/airplane/", method = RequestMethod.GET)
     public Iterable<Airplane> getAll(){
         return airplaneRepository.findAll();
     }
 
+    //Create a new airplane. Id is auto-generated.
     @RequestMapping(value="api/airplane/", method = RequestMethod.POST)
     public Airplane create(@RequestBody Airplane airplane){
         return airplaneRepository.save(airplane);
     }
 
+    //Delete a specific airplane by putting its id in the url.
     @DeleteMapping("api/airplane/{id}")
     public void deleteAirplane(@PathVariable Long id) {
         airplaneRepository.deleteById(id);
     }
 
-//    @PutMapping("api/airplane/{id}")
-//    public ResponseEntity<?> saveResource(@RequestBody Airplane airplane, @PathVariable("id") Long id) {
-//        airplaneRepository.save(airplane);
-//        return ResponseEntity.ok("resource saved");
-//    }
-
+    //Update a specific airplane by putting its id in the url.
     @PutMapping("api/airplane/{id}")
     public ResponseEntity<Object> updateAirplane(@RequestBody Airplane airplane, @PathVariable long id) {
 

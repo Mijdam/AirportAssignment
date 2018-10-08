@@ -13,6 +13,9 @@ public class Airplane {
     private int fuel;
     private String location; //May become an enum in the future. Keeping it simple for now.
 
+
+    //---------- Getters and setters -----------
+
     public long getId() {
         return id;
     }
